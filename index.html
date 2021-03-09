@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="In my head.">
+    <meta name="author" content="Austin Huynh">
+    <title>Media of the Future</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Pixel CSS -->
+    <link type="text/css" rel="stylesheet" href="css/pixel.css">
+
+    <!--  JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- pixel JS -->
+    <script src="js/pixel.js"></script>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  
+    <script> 
+        /* Add "https://api.ipify.org?format=json" statement 
+           this will communicate with the ipify servers in 
+           order to retrieve the IP address $.getJSON will 
+           load JSON-encoded data from the server using a 
+           GET HTTP request */ 
+  
+        $.getJSON("https://api.ipify.org?format=json", function(data) { 
+
+            $("#ip").html(data.ip); 
+        }) 
+    </script> 
+</head> 
+  
+<body> 
+        <h1></h1> 
+        <h3>IP Address is:</h3> 
+  
+        <p id="ip"></p> 
+  
+</body> 
+
+<footer>
+    <nav id="navbar-footer"
+        class="navbar navbar-main navbar-expand-lg navbar-dark justify-content-between navbar-footer fixed-bottom">
+        <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
+            <li class="nav-item">
+                <a href="https://austinhuynh.dev/" class="nav-link" role="button">
+                    <span class="nav-link-inner-text">🔙 My site</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://github.com/austinhuynh" class="nav-link" role="button">
+                    <span class="nav-link-inner-text">🖥️ GitHub</span>
+                </a>
+            </li>
+        </ul>
+        <div class="time text-center">
+            <span class="time text-uppercase">WHENEVER PM</span>
+        </div>
+    </nav>
+</footer>
+
+</html> 
