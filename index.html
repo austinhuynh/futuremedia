@@ -29,7 +29,11 @@
     <!-- pixel JS -->
     <script src="js/pixel.js"></script>
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-  
+    
+
+
+
+
     <script> 
         /* Add "https://api.ipify.org?format=json" statement 
            this will communicate with the ipify servers in 
@@ -45,35 +49,115 @@
 </head> 
   
 <body> 
-        <h1></h1> 
-        <h3>IP Address is:</h3> 
-  
-        <p id="ip"></p> 
-        <section class="section section-xl vh-100 bg-secondary overflow-auto z-2">
-            <div class="container z-2">
-                <div class="row justify-content-center pt-6 pt-lg-5 pb-0 mb-2">
-                    <div class="col-12 col-xl-7">
-                        <div class="card card-tertiary">
-                            <div class="card-header text-center">
-                                <span>Welcome to my brain. 🧠</span>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">My inspiration for this project comes from my own experience with ADHD
-                                    The retro computer style was inspired by my father and him teaching me computers.
-                                    My intentions with this project is to highlight what is like to have ADHD.
-                                    A phrase I like to use when people ask me what it is like is “a computer with 100 windows open”. I took this phrase and turned it into this site.
-                                    The windows that open represent my inner thoughts at all times.
-                                    </p>
-                                <div class="text-center">
-                                    <a href="#" target="_blank" onclick="myHead(); return false;" class="btn btn-sm mr-2 btn-primary border-dark"
-                                        role="button"><span class="btn-text">Experience my mind 😖</span></a>
-                                </div>
+    
+
+    
+    <main>
+    <section class="min-vh-100 d-flex align-items-center bg-secondary">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-10">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0 bg-secondary">
+                    <div class="card card-tertiary">
+                        <div class="card-header">
+                            Default Primary Card Header Title
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">IP Address is:</p>
+                            <p class="card-text" id="ip">IP Address is:</p>
+                            <div class="d-flex justify-content-end mt-3">
+                                <button class="btn btn-sm mr-2 btn-primary border-dark"
+                                    type="button"><span class="btn-text">OK</span></button>
+                                <button class="btn btn-sm btn-primary" type="button"><span
+                                        class="btn-text">Cancel</span></button>
                             </div>
                         </div>
                     </div>
                 </div>
+              </div>
+              <div class="col-lg">
+                <div class="card "  style="width: 18rem;">
+                    <img  src="https://w3codegenerator.com/img/sample-image/new_zealand-300x225.jpg" class="card-img-top" alt="Card image cap">
+                   <div class="card-body">
+                       <h5 class="card-title">Card title</h5>
+                       <p  class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                       <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg">
+                One of three columns
+              </div>
             </div>
-        </section>
+        </div>
+    </section>
+        <section class="min-vh-100 d-flex align-items-center bg-secondary">
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0 bg-secondary">
+                <div class="card card-tertiary">
+                    <div class="card-header">
+                        Default Primary Card Header Title
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">IP Address is:</p>
+                        <p class="card-text" id="ip">IP Address is:</p>
+                        <div class="d-flex justify-content-end mt-3">
+                            <button class="btn btn-sm mr-2 btn-primary border-dark"
+                                type="button"><span class="btn-text">OK</span></button>
+                            <button class="btn btn-sm btn-primary" type="button"><span
+                                    class="btn-text">Cancel</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="card card-tertiary w-100 fmxw-400">
+        <div class="card-header text-center">
+        <span>Sign in to our platform</span>
+        </div>
+        <div class="card-body">
+        <form action="#" class="mt-4">
+        
+        <div class="form-group">
+        <label for="email" class="mb-2">Email</label>
+        <input id="email" type="email" class="form-control" placeholder="Your email" required="">
+        </div>
+        
+        <div class="form-group">
+        
+        <div class="form-group">
+        <label for="password" class="mb-2">Password</label>
+        <input id="password" type="password" class="form-control" placeholder="Your password" required="">
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="form-check">
+        <label class="form-check-label">
+        <input class="form-check-input" type="checkbox">
+        <span class="form-check-x"></span>
+        <span class="form-check-sign"></span>
+        Remember me
+        </label>
+        </div>
+        <p class="m-0"><a href="#" class="text-right">Lost password?</a></p>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary">Login</button>
+        </form>
+        <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+        <p class="font-weight-normal">
+        Not registered?
+        <a href="./register.html" class="font-weight-bold">Create account</a>
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        </main>
   
 </body> 
 
