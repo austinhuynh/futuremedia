@@ -29,6 +29,7 @@
     <script src="https://unpkg.com/bowser@2.4.0/es5.js"></script>
 
     <script type="text/javascript" src="node_modules/just-detect-adblock/dist/bundle.umd.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
     <!-- pixel JS -->
     <script src="js/pixel.js"></script>
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
@@ -56,18 +57,7 @@
     }
     </script>
 
-    <script>
-        function isPlaying(audelem) { return !audelem.paused; }
-        
-        if(isPlaying){
-            var output = "Yes, you are."
-            document.write('output');
-        } else{
-            var output = "No, you aren't."
-            document.write('output');
-        }
-        
-    </script>
+
     
 
 </head> 
@@ -165,7 +155,31 @@
               <h5 class="card-title">Webcam Advert</h5>
                   <h6 class="card-subtitle mb-2 text-muted">We can see you.</h6>
                   <p class="card-text">Do you use a webcam?</p>
-                  <p class="card-text">Yes, you do.</p>
+
+                  <p class = "card-text" id="p1">Hello World!</p>
+                  <script>
+                   var camOn = "Yes, you are.";
+                   var camOff = "No, you aren't."; 
+ 
+                    function detectWebcam(callback) {
+                    let md = navigator.mediaDevices;
+                    if (!md || !md.enumerateDevices) return callback(false);
+                    md.enumerateDevices().then(devices => {
+                        callback(devices.some(device => 'videoinput' === device.kind));
+                    })
+                    }
+
+                    detectWebcam(function(hasWebcam) {
+                    console.log('Webcam: ' + (hasWebcam ? 'yes' : 'no'));
+                    if(hasWebcam){
+                            document.getElementById("p1").innerHTML = camOn;
+                        } else {
+                            document.getElementById("p1").innerHTML = camOff;
+                        }
+                    })
+                  </script>
+                  
+                  
                   <p class="card-text">Come buy our new one. It's probably better than yours. Trust us.</p>
               <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
