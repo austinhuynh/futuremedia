@@ -26,6 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/bowser@2.4.0/es5.js"></script>
     <!-- pixel JS -->
     <script src="js/pixel.js"></script>
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
@@ -35,9 +36,7 @@
 
 
     <script> 
-        /* Add "https://api.ipify.org?format=json" statement 
-           this will communicate with the ipify servers in 
-           order to retrieve the IP address $.getJSON will 
+        /*  retrieve the IP address $.getJSON will 
            load JSON-encoded data from the server using a 
            GET HTTP request */ 
   
@@ -54,6 +53,20 @@
       alert("Why would you visit an ad that already is taking your info?");
     }
     </script>
+
+    <script>
+        function isPlaying(audelem) { return !audelem.paused; }
+        
+        if(isPlaying){
+            var output = "Yes, you are."
+            document.getElementById('output').innerHTML = output;
+        } else{
+            var output = "No, you aren't."
+            document.getElementById('output').innerHTML = output;
+        }
+        
+    </script>
+    
 
 </head> 
   
@@ -73,9 +86,14 @@
                     <div class="card-body">
                       <h5 class="card-title">Browser Based Ad</h5>
                           <h6 class="card-subtitle mb-2 text-muted">This is how you got here.</h6>
-                      <p class="card-text">You currently use</p>
-                      <p class="card-text">Google Chrome</p>
-                      <p class="card-text">to browse the web</p>
+                        <script>
+                            var result = bowser.getParser(window.navigator.userAgent);
+                            console.log(result);
+                            document.write("You are using " + result.parsedResult.browser.name +
+                                   " v" + result.parsedResult.browser.version);
+                        </script>
+                      <p class="card-text" id='browser'></p>
+                      <p class="card-text">to browse the web. Try our new browser today!</p>
                       <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
             </div>
@@ -119,8 +137,11 @@
             <div class="card-body">
               <h5 class="card-title">Operating System Ad</h5>
                   <h6 class="card-subtitle mb-2 text-muted">At least it's not DOS</h6>
-                  <p class="card-text">You are currently using</p>
-                  <p class="card-text">Windows 10 Pro</p>
+                  <script>
+                    var result = bowser.getParser(window.navigator.userAgent);
+                    console.log(result);
+                    document.write("You are using " + result.parsedResult.os.name);
+                    </script>
                   <p class="card-text">to interact with the world. Why not try Linux?</p>
               <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
@@ -148,7 +169,7 @@
               <h5 class="card-title">Audio Based Ad</h5>
                   <h6 class="card-subtitle mb-2 text-muted">And hear you too.</h6>
                   <p class="card-text">Listening to audio?</p>
-                  <p class="card-text">No, you aren't.</p>
+                  <p class="card-text" id="output">yesy</p>
                   <p class="card-text">Well when you do, come buy our new headphones :)</p>
               <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
