@@ -27,6 +27,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/bowser@2.4.0/es5.js"></script>
+
+    <script type="text/javascript" src="node_modules/just-detect-adblock/dist/bundle.umd.js"></script>
     <!-- pixel JS -->
     <script src="js/pixel.js"></script>
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
@@ -59,10 +61,10 @@
         
         if(isPlaying){
             var output = "Yes, you are."
-            document.getElementById('output').innerHTML = output;
+            document.write('output');
         } else{
             var output = "No, you aren't."
-            document.getElementById('output').innerHTML = output;
+            document.write('output');
         }
         
     </script>
@@ -123,7 +125,15 @@
               <h5 class="card-title">AdBlock Ad</h5>
                   <h6 class="card-subtitle mb-2 text-muted">You can't block these ads!</h6>
                   <p class="card-text">Do you use adblock?</p>
-                  <p class="card-text">Yes, you do.</p>
+                  <script type="text/javascript">
+                    justDetectAdblock.detectAnyAdblocker().then(function(detected) {
+                      if(detected){
+                        // an adblocker is detected
+                        document.write("Yes, you do.");
+                      }
+                      document.write("No, you don't.");
+                    });
+                  </script> 
                   <p class="card-text">Now stop it!</p>
               <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
@@ -169,7 +179,16 @@
               <h5 class="card-title">Audio Based Ad</h5>
                   <h6 class="card-subtitle mb-2 text-muted">And hear you too.</h6>
                   <p class="card-text">Listening to audio?</p>
-                  <p class="card-text" id="output">yesy</p>
+                  <script>
+                    function isPlaying(audelem) { return !audelem.paused; }
+                    
+                    if(isPlaying){
+                        document.write("Yes, you are.");
+                    } else{
+                        document.write("No, you aren't.");
+                    } 
+                    
+                </script>
                   <p class="card-text">Well when you do, come buy our new headphones :)</p>
               <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
