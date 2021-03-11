@@ -116,14 +116,17 @@
                   <h6 class="card-subtitle mb-2 text-muted">You can't block these ads!</h6>
                   <p class="card-text">Do you use adblock?</p>
                   <script type="text/javascript">
-                    justDetectAdblock.detectAnyAdblocker().then(function(detected) {
-                      if(detected){
-                        // an adblocker is detected
+                    var adblock = true;
+                </script>
+                <script type="text/javascript" src="adframe.js"></script>
+                <script type="text/javascript">
+                    if(adblock) {
                         document.write("Yes, you do.");
-                      }
-                      document.write("No, you don't.");
-                    });
-                  </script> 
+                    } else {
+                        document.write("No, you don't.");
+                    }
+
+                </script>
                   <p class="card-text">Now stop it!</p>
               <a href="#" class="btn mr-2" onclick="why()"><i class="fas fa-link"></i> Visit Site</a>
               
